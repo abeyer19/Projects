@@ -15,53 +15,48 @@ def dtypes_converter(dtype):
             'timedelta64[ns]': 'INTERVAL'}
     return dtypes_dict.get(str(dtype))
 
-# TODO: Fix the looping error when trying to escape the program when prompted by hitting 'esc'.
+
 # Take in a file from specified from the user
 # Solutions for errors during file path input from user in while loop
 while True:
+    path_input = input("File Path: ")
+
+    # Check if the path has quotes
+    if (path_input[0] == "'") or (path_input[-1] == "'"):
+        print('Please remove quotations around the file path.')
+        continue
+
+    # Check if the file exists
+    if not os.path.exists(path_input):
+        print("File not found, please try again.")
+        continue
+
+    # Try to read in CSV file
     try:
-        path_input = input("File Path: ")
+        df = pd.read_csv(path_input)
+        print("\nFile path is valid! \nAccessing File.")
+        break
 
-        # Check if the path has quotes
-        if (path_input[0] == "'") or (path_input[-1] == "'"):
-            print('Please remove quotations around the file path.')
-            continue
-
-        # Check if the file exists
-        if not os.path.exists(path_input):
-            print("File not found, please try again.")
-            continue
-
-        # Try to read in CSV file
-        try:
-            df = pd.read_csv(path_input)
-            print("\nFile path is valid! \nAccessing File.")
-            break
-        
-        except pd.errors.ParserError as e:
-            print(f"ParserError: There was an issue parsing the CSV file. {e}")
-            continue
-        
+# TODO: Figure out why IndexError shows up when I press escape to exit the program
 # Error handling
-    # Handle Index Errors
+    except pd.errors.ParserError as e:
+        print(f"ParserError: There was an issue parsing the CSV file. {e}")
+
     except IndexError as e:
         print(f"Index Error: {e}")
     
-    # Handle other unexpected errors
     except Exception as e:
         print(f"Exception Error: {e}")
 
-    # Handle Type Errors
     except TypeError as e:
         print(f"Type Error: {e}")
 
-    # Handle Permission Error
     except PermissionError as e:
         print(f"Permission Error {e}")
 
     except KeyboardInterrupt:
         print("Program interrupted by user. Exiting...")
-        break  # or exit()
+        break
 
 
 # get file name
