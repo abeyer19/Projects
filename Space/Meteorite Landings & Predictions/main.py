@@ -3,6 +3,7 @@
 
 # Import packages
 import pandas as pd
+import plotly.express as px
 
 
 # --- Testing / Tinkering ---
@@ -14,7 +15,6 @@ print(df[df['mass (g)'] == df['mass (g)'].max()])
 # --- Real Analysis ---
 # Add column to convert mass (g) to lbs
 df['mass (lbs)'] = round(df['mass (g)'] * 0.00220462262, 2)
-print(df.columns)
 
 # Understand statistics
     # 1. Basic statistics
@@ -25,8 +25,12 @@ print(df.columns)
     # 1. Interactive map showing each point on the map
     # 2. Increase in either size or decrease color oppacity for mass
 
+fig = px.scatter_geo(df, locations="GeoLocation", color="recclass",
+                     animation_frame="year",
+                     projection="natural earth")
+fig.show()
+
 # Create simulations based on location and mass of meteorites
     # 1. Where are the biggest ones going to hit?
     # 2. Where is the most highly condensed area where they will hit
     # 3. Show visualization of simulations in real time (if possible)
-    # 4. 
