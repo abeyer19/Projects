@@ -8,15 +8,12 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 
 # Import from other .py files
-from Projects.Space.Meteorite_Landings_and_Predictions.meteorite_graphs import meteorite_graphs
+from Space.Meteorite_Landings_and_Predictions.meteorite_graphs import meteorite_graphs
 
 
 # --- Testing / Tinkering ---
 # Import dataset
 df = pd.read_csv('https://raw.githubusercontent.com/abeyer19/Projects/refs/heads/main/Space/Meteorite%20Landings%20%26%20Predictions/Meteorite_Landings_20250128.csv')
-
-print(df['mass (g)'].max())
-
 
     # --- Real Analysis ---
 def main():
@@ -37,7 +34,7 @@ def main():
         # 1. Interactive map showing each point on the map
         # 2. Increase in either size or decrease color oppacity for mass
         # 3. Create seperate scatter_geo for each continent
-    meteorite_graphs()
+    meteorite_graphs(df)
 
     # Create simulations based on location and mass of meteorites
         # 1. Where are the biggest ones going to hit?

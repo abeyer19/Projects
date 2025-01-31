@@ -4,11 +4,8 @@ import plotly.express as px
 from matplotlib import pyplot as plt
 import seaborn as sns
 
-# Import df
-from Space.Meteorite_Landings_and_Predictions.main import df
 
-
-def meteorite_graphs():
+def meteorite_graphs(df):
 # Understand statistics
     # 1. Basic statistics
     print(df.describe())
