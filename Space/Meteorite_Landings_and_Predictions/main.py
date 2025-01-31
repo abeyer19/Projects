@@ -1,6 +1,5 @@
 # Dataset link -> https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh/about_data
 
-
 # Import packages
 import pandas as pd
 import plotly.express as px
