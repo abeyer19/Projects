@@ -6,6 +6,14 @@ import seaborn as sns
 
 
 def meteorite_graphs(df):
+    # Replace nan's with 0
+    df['mass (g)'] = df['mass (g)'].fillna(0)
+    # Add column to convert mass (g) to mass (lbs)
+    df['mass (lbs)'] = round(df['mass (g)'] * 0.00220462262, 2)
+    # Change columns to numeric
+    df['mass (g)'] = pd.to_numeric(df['mass (g)'])
+    df['mass (lbs)'] = pd.to_numeric(df['mass (lbs)'])
+
 # Understand statistics
     # 1. Basic statistics
     print(df.describe())
