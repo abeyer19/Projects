@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 
 # Import df
-from main import df
+from Space.Meteorite Landings & Predictions.main import df
 
 
 def meteorite_graphs():
