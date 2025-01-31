@@ -8,7 +8,7 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 
 # Import from other .py files
-from Space.Meteorite Landings & Predictions.meteorite_graphs.py import meteorite_graphs
+from Projects.Space.Meteorite_Landings_and_Predictions.meteorite_graphs import meteorite_graphs
 
 
 # --- Testing / Tinkering ---
