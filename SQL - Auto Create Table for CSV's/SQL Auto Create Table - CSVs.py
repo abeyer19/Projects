@@ -3,16 +3,21 @@ import os
 
 # python dtypes to PostgreSQL data type function by way of dictionary
 def dtypes_converter(dtype):
-    dtypes_dict = {'int64': 'INTEGER',
-            'int32': 'INTEGER',
-            'int16': 'SMALLINT',
-            'int8': 'SMALLINT',
-            'float64': 'DOUBLE PRECISION',
-            'float32': 'REAL',
-            'bool': 'BOOLEAN',
-            'object': 'TEXT',
-            'datetime64[ns]': 'TIMESTAMP',
-            'timedelta64[ns]': 'INTERVAL'}
+    dtypes_dict = {
+        'int64': 'bigint',        # Pandas int64 → PostgreSQL bigint
+        'int32': 'integer',       # Pandas int32 → PostgreSQL integer
+        'int16': 'smallint',      # Pandas int16 → PostgreSQL smallint
+        'float64': 'double precision',  # Pandas float64 → PostgreSQL double precision
+        'float32': 'real',        # Pandas float32 → PostgreSQL real
+        'bool': 'boolean',        # Pandas bool → PostgreSQL boolean
+        'object': 'text',         # Pandas object (string) → PostgreSQL text
+        'datetime64[ns]': 'timestamp',  # Pandas datetime → PostgreSQL timestamp (without time zone)
+        'datetime64[ns, UTC]': 'timestamp with time zone',  # Pandas datetime with timezone → PostgreSQL timestamp with time zone
+        'timedelta[ns]': 'interval',  # Pandas timedelta → PostgreSQL interval
+        'category': 'varchar',    # Pandas category → PostgreSQL varchar
+        'complex128': 'text',     # Pandas complex number → PostgreSQL text (PostgreSQL doesn’t have a complex type)
+        'object': 'jsonb',        # Pandas object (for JSON) → PostgreSQL jsonb
+}
     return dtypes_dict.get(str(dtype))
 
 
