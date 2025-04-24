@@ -58,6 +58,9 @@ def meteorite_graphs(df):
 
 # --- Predictions ---
 # Create simulations based on location and mass of meteorites
+    # 1. Where are the biggest ones going to hit?
+    # 2. Where is the most highly condensed area where they will hit
+    # 3. Show visualization of simulations in real time (if possible)
 
 # Geo Locations Groupings
 # North America
@@ -97,17 +100,11 @@ asia_count = meteors[(meteors['reclat'] >= asia_lat[0]) & (meteors['reclat'] <= 
 australia_count = meteors[(meteors['reclat'] >= australia_lat[0]) & (meteors['reclat'] <= australia_lat[1]) & (meteors['reclong'] >= australia_long[0]) & (meteors['reclong'] <= australia_long[1])].shape[0]
 artic_count = meteors[(meteors['reclat'] >= artic_lat[0]) & (meteors['reclat'] <= artic_lat[1]) & (meteors['reclong'] >= artic_long[0]) & (meteors['reclong'] <= artic_long[1])].shape[0]
 
-print(meteors.count())
-print(n_america_count)
-print(s_america_count)
-print(euro_count)
-print(africa_count)
-print(asia_count)
-print(australia_count)
-print(artic_count)
-print(n_america_count + s_america_count + euro_count + africa_count + asia_count + australia_count + artic_count)
-
-
-    # 1. Where are the biggest ones going to hit?
-    # 2. Where is the most highly condensed area where they will hit
-    # 3. Show visualization of simulations in real time (if possible)
+print(f"NA Count: {n_america_count}")
+print(f"SA Count: {s_america_count}")
+print(f"Euro Count: {euro_count}")
+print(f"Africa Count: {africa_count}")
+print(f"Asia Count: {asia_count}")
+print(f"Australia Count: {australia_count}")
+print(f"Atric Count: {artic_count}")
+print(f"Total Counts: {n_america_count + s_america_count + euro_count + africa_count + asia_count + australia_count + artic_count}")

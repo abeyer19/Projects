@@ -1,0 +1,10 @@
+version 1.0.0 - Beta
+    --= 4/23/2025 - 21:38 =--
+        Finished setting up the basic structure of the project and writing out the vision/ideas.
+        
+        Items Added:
+        - read_me.txt -> used for basic overview of the project
+        - patch_notes.txt -> used to keep track of updates and document progress of the project
+        - tinker.txt -> used for recording ideas and basic structure of the project
+
+    --=   =--
