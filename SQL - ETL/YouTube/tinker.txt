@@ -1,0 +1,21 @@
+--= Ideas and tinkering =--
+
+
+4/23/2025 - 21:38
+* Sudo Code *
+
+1. Collect data from YouTube using BrightData (https://brightdata.com/products/web-scraper) on channels and videos.
+    a. Channel data; name, id, sub count, view count, category, current date and time
+    b. Video data; name, id, channel name, tags, view count, comment count, date and time originally posted, current date and time
+
+2 Schedule a cron bash script to grab data every _nth time.
+
+3. Load into PGAdmin4 (PostgreSQL) database and perform ETL/ELT where necessary.
+
+4. Develop a live dashboard connected to PGAdmin4 database and have live alarts to try and finding videos that are blowing up quickly.
+    a. I want to be able to see what channels/videos blow up quickly that don't necessarily have a large following and viewership already (150% viewership or subscribership increase).
+    b. -- Could greatly decrease the time between bash runs to see ones that are blowing up quickly within the same day?
+        i. -- Develop further by looking at similar title names or tags?
+
+5. When jumps occur, flag and load into PGAdmin4 database table for big jumpers.
+    a. Need to be above the 150% viewership or subscribership threshold.
