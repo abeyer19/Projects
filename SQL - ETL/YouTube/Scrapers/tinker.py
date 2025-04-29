@@ -1,10 +1,13 @@
 from googleapiclient.discovery import build
+from dotenv import load_dotenv
+import os
 
-# Replace with your API key
-API_KEY = 'YOUR_API_KEY_HERE'
+# Replace with API key
+load_dotenv("config.env")
+api_key = os.getenv("API_KEY")
 
 # Create a service object
-youtube = build('youtube', 'v3', developerKey=API_KEY)
+youtube = build('youtube', 'v3', developerKey=api_key)
 
 # Example: Search for videos with a keyword
 request = youtube.search().list(
