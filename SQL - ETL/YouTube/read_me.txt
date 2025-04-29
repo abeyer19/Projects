@@ -11,3 +11,6 @@ Set up for Cloning Repository and using Google API key:
     b. cd path/to/your/directory
     c. type in -> echo "API_KEY=your_api_key_here" > config.env
     *IMPORTANT -- .env file is not called config.env, github will not ignore when making any commits to your repository*
+
+
+API Documentation: https://developers.google.com/youtube/v3/docs
