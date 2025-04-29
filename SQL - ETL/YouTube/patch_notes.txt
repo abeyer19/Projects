@@ -7,4 +7,11 @@ version 1.0.0 - Beta
         - patch_notes.txt -> used to keep track of updates and document progress of the project
         - tinker.txt -> used for recording ideas and basic structure of the project
 
-    --=   =--
+    --= 4/28/2025 - 21:11  =--
+        Finalized setting up API key on local disk space using the .gitignore (committed) and config.env (local only) files. 
+        Tested API and printed out sample on tinker.py.
+        Added in notes for this on the 'read_me.txt' file for others to copy and easily use without showing API key publicly.
+
+        Items Added:
+        - .gitignore
+        - config.env (local only)

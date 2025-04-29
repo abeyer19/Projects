@@ -4,7 +4,7 @@
 4/23/2025 - 21:38
 * Sudo Code *
 
-1. Collect data from YouTube using BrightData (https://brightdata.com/products/web-scraper) on channels and videos.
+1. Collect data from YouTube using Google (https://developers.google.com/youtube/v3) on channels and videos.
     a. Channel data; name, id, sub count, view count, category, current date and time
     b. Video data; name, id, channel name, tags, view count, comment count, date and time originally posted, current date and time
 
