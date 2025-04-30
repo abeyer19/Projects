@@ -1,27 +1,33 @@
+# Importy all packages
 from googleapiclient.discovery import build
 from dotenv import load_dotenv
 import os
+import pandas as pd
 
-# Replace with API key
+# --- Intro for pulling data via API ---
+# Load in 'congif.env' file for API Key
 load_dotenv("config.env")
 api_key = os.getenv("API_KEY")
 
 # Create a service object
 youtube = build('youtube', 'v3', developerKey=api_key)
 
-# Example: Search for videos with a keyword
-request = youtube.search().list(
-    part='snippet',
-    q='OpenAI',
-    maxResults=5
-)
+def search_channels(query, result_limit):
+    request = youtube.search().list(part='id, snippet, statistics', type='channel', q=query, maxResults=result_limit)
+    response = request.execute()
+    
+    channel_ids = []
+    channel_titles = []
 
-response = request.execute()
+    for item in response['items']:
+        channel_ids.append(item['id']['channelId'])
+        channel_titles.append(item['snippet']['channelTitle'])
 
-# Print the results
-for item in response['items']:
-    print(f"Title: {item['snippet']['title']}")
-    print(f"Channel: {item['snippet']['channelTitle']}")
-    print(f"Published At: {item['snippet']['publishedAt']}")
-    print(f"Video ID: {item['id'].get('videoId')}")
-    print('-' * 50)
+    channel_data = pd.DataFrame({
+        'channel_id': channel_ids,
+        'channel_title': channel_titles
+    })
+
+    return channel_data
+
+print(search_channels('Outdoor Boys', 5))

@@ -15,3 +15,11 @@ version 1.0.0 - Beta
         Items Added:
         - .gitignore
         - config.env (local only)
+
+    --= 4/29/2025 - 21:26 =--
+        Updated main.py with tinkerings from tinker.py with a method to search by channels.
+
+        Items Added:
+        None
+
+    --=  =--
