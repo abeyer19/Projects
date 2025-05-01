@@ -22,7 +22,7 @@ version 1.0.0 - Beta
         Items Added:
         None
 
-    --= 4/30/2025 -  =--
+    --= 4/30/2025 - 21:01 =--
         Added in a search.py file to start seperating out tasks. Able to put in search perameters such as query, type, and output limit for more customizable searches. To be used later in production once direction is given towards what data to pull daily in cron.
         Updated main.py to stage new files for searches, channels, videos, etc.
         Updated tinkering to start looking into categories, was able to find category ID's for a new search perameter in search.py.
