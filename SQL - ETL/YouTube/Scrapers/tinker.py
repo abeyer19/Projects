@@ -12,22 +12,22 @@ api_key = os.getenv("API_KEY")
 # Create a service object
 youtube = build('youtube', 'v3', developerKey=api_key)
 
-def search_channels(query, result_limit):
-    request = youtube.search().list(part='id, snippet, statistics', type='channel', q=query, maxResults=result_limit)
+def categories():
+    request = youtube.videoCategories().list(part='snippet', regionCode='US')
     response = request.execute()
     
-    channel_ids = []
-    channel_titles = []
+    category_ids = []
+    category_titles = []
 
     for item in response['items']:
-        channel_ids.append(item['id']['channelId'])
-        channel_titles.append(item['snippet']['channelTitle'])
+        category_ids.append(item['id'])
+        category_titles.append(item['snippet']['title'])
 
     channel_data = pd.DataFrame({
-        'channel_id': channel_ids,
-        'channel_title': channel_titles
+        'category_id': category_ids,
+        'category_title': category_titles
     })
 
     return channel_data
 
-print(search_channels('Outdoor Boys', 5))
+print(categories())
