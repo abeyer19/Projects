@@ -2,8 +2,7 @@
 import pandas as pd
 from api_connection import youtube
 
-from categories import categories
-
+# Search is only to be used for basic searching of channel, video, and playlist metadata such as ID and Titles, all other statistics to be collected through collector.py
 def search(result_limit:int, type:str, query:str, video_category_id:str=None, video_duration:str=None):
     # To be used only if 'type' = 'channel'
     if type == 'channel':
@@ -15,7 +14,8 @@ def search(result_limit:int, type:str, query:str, video_category_id:str=None, vi
             type=type, 
             q=query,
             videoCategoryId=video_category_id,
-            videoDuration=video_duration,)
+            videoDuration=video_duration,
+            )
         
         response = request.execute()
 
@@ -34,7 +34,6 @@ def search(result_limit:int, type:str, query:str, video_category_id:str=None, vi
         return channel_data
 
     # To be used only if 'type' = 'video'
-    #TODO: Find how to pull in video views
     elif type == 'video':
         request = youtube.search().list(
             part='id, snippet',
@@ -50,26 +49,14 @@ def search(result_limit:int, type:str, query:str, video_category_id:str=None, vi
 
         video_titles = []
         video_ids = []
-        video_views = []
-        channel_ids = []
-        channel_titles = []
-        date_postings = []
 
         for item in response['items']:
             video_titles.append(item['snippet']['title'])
             video_ids.append(item['id']['videoId'])
-            #video_views.append(item[])
-            channel_ids.append(item['snippet']['channelId'])
-            channel_titles.append(item['snippet']['channelTitle'])
-            date_postings.append(item['snippet']['publishedAt'])
 
         video_data = pd.DataFrame({
-            'video_title': video_titles,
             'video_id': video_ids,
-            #'video_view' = [],
-            'channel_id': channel_ids,
-            'channel_title': channel_titles,
-            'date_posted': date_postings,
+            'video_title': video_titles,
         })
 
         return video_data
@@ -78,4 +65,4 @@ def search(result_limit:int, type:str, query:str, video_category_id:str=None, vi
 # --- TESTING ---
 #categories_df = categories()
 print(search(1, 'channel', 'Gaming'))
-print(search(1, 'video', 'Ninja', '20', 'long'))
+print(search(5, 'video', 'Ninja', '20', 'long'))
