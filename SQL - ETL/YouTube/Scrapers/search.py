@@ -20,15 +20,15 @@ def search(result_limit:int, type:str, query:str, video_category_id:str=None, vi
         response = request.execute()
 
         channel_ids = []
-        channel_titles = []
+        channel_names = []
 
         for item in response['items']:
             channel_ids.append(item['id']['channelId'])
-            channel_titles.append(item['snippet']['channelTitle'])
+            channel_names.append(item['snippet']['channelTitle'])
 
         channel_data = pd.DataFrame({
             'channel_id': channel_ids,
-            'channel_title': channel_titles
+            'channel_name': channel_names
         })
 
         return channel_data

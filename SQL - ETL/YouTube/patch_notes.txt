@@ -34,8 +34,10 @@ version 1.0.0 - Beta
         Added in an api_connection file for api connection call and a categories file for pulling current YouTube categories for database table.
         Refined the search function to be dynamic between type - either video or channel, specifying datatypes and allowing for some arguments that are passed through the function to be ignored when needed.
         Added in a collector_video.py file to seperate the data collection outside of search.py, which only includes basic search features for metadata such as title and id of videos and channels.
+        Added in collector_channel.py file to seperate the data collection outside of search.py, which only includes basic search features for metadata such as title and id of videos and channels.
 
         Items Added:
         - api_connection.py
         - categories.py
         - collector_video
+        - collector_channel
