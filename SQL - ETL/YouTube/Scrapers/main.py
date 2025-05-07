@@ -4,13 +4,23 @@ from dotenv import load_dotenv
 import os
 import pandas as pd
 
-
 # Import other file functions
 from search import search
+from categories import categories
+from collector_video import collector_video
+from collector_channels import collector_channel
+
 
 # Search for items on YouTube
-# 3 inputs needed -> query, type, and output limit
-    # Query -> string of text defining the search
-    # Type -> string of text of 3 options: channel, video, or playlist
-    # Output limit -> integer for the number of search results
-print(search('Outdoor Boys', 'channel', 5))
+category_df = categories()
+category_df['category_id'] = category_df['category_id'].astype('string')
+
+# SUDO-code
+# print out n number of video IDs per search by category ID
+# get collector video data
+# get collector channel data based on collector video data
+
+for id in category_df['category_id']:
+    print(search(result_limit=1, type='video', video_category_id=id, video_duration='long'))
+    print(id)
+    print('---------')

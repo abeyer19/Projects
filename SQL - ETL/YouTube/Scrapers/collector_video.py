@@ -45,5 +45,3 @@ def collector_video(video_id:str):
     })
     
     return collector_data
-
-print(collector_video('alp-DUiE3Dw'))

@@ -1,33 +1,20 @@
 # Importy all packages
-from googleapiclient.discovery import build
-from dotenv import load_dotenv
-import os
 import pandas as pd
+from api_connection import youtube
 
-# --- Intro for pulling data via API ---
-# Load in 'congif.env' file for API Key
-load_dotenv("config.env")
-api_key = os.getenv("API_KEY")
+# Make a function that takes each category and searches the top 10 videos for each category
+# - List the unique channels within the search, eliminating duplicates
+# - Find only recent video postings - 1-week lag
+# - Get metadata for videos and channels such as:
+    # Video - ID, title, date posted, 
+    # Channel - ID, name, sub count
 
-# Create a service object
-youtube = build('youtube', 'v3', developerKey=api_key)
+from categories import categories
+from search import search
 
-def categories():
-    request = youtube.videoCategories().list(part='snippet', regionCode='US')
-    response = request.execute()
-    
-    category_ids = []
-    category_titles = []
+categories_df = categories()
 
-    for item in response['items']:
-        category_ids.append(item['id'])
-        category_titles.append(item['snippet']['title'])
-
-    channel_data = pd.DataFrame({
-        'category_id': category_ids,
-        'category_title': category_titles
-    })
-
-    return channel_data
-
-print(categories())
+for index, id in categories_df.iterrows():
+    print(search(1,'channel',))
+    print(id['category_id'])
+    print('--------')

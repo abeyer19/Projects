@@ -33,5 +33,3 @@ def collector_channel(channel_id:str):
     })
 
     return collector_data
-
-print(collector_channel('UCAW-NpUFkMyCNrvRSSGIvDQ'))
