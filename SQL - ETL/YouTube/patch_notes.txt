@@ -41,3 +41,7 @@ version 1.0.0 - Beta
         - categories.py
         - collector_video
         - collector_channel
+
+    --= 5/28/2025 - 19:52 =--
+        Been on vacation for the past two weeks with no computer access.
+        Working on developing out the database in PGAdmin4 and understanding out to use a Python library of my choice to connect to PostgreSQL server and do the ETL process.
