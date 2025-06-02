@@ -46,3 +46,6 @@ version 1.0.0 - Beta
         Been on vacation for the past two weeks with no computer access.
         Working on developing out the database in PGAdmin4 and understanding out to use a Python library of my choice to connect to PostgreSQL server and do the ETL process.
         Spent 4 hours trying to uninstall and reinstall PGAdmin4 to start from scratch, will need to find a new PostgreSQL server host or create a new user on my computer for projects.
+
+    --= 6/1/2025 17:42 =--
+        Finalized the database creation, but needed to create a new user on my Mac then download PGAdmin4 through Homebrew. I could not find out where the PG conf file was with the password for the application, therefore I         could not replace my password for the admin of PGAdmin4 and create new databases.
