@@ -14,3 +14,12 @@ Set up for Cloning Repository and using Google API key:
 
 
 API Documentation: https://developers.google.com/youtube/v3/docs
+
+
+Folder structure of the project:
+1. Scrapers
+    - 
+2. Writers
+    - 
+3. Lifters
+    - 
