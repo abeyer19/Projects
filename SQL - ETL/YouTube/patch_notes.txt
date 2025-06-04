@@ -49,3 +49,10 @@ version 1.0.0 - Beta
 
     --= 6/1/2025 17:42 =--
         Finalized the database creation, but needed to create a new user on my Mac then download PGAdmin4 through Homebrew. I could not find out where the PG conf file was with the password for the application, therefore I         could not replace my password for the admin of PGAdmin4 and create new databases.
+
+    -= 6/3/2025 21:34 =--
+        Updated documentation and added more folder file structure.
+        Added config.env file so it is already downloaded when copying repository.
+
+        Items Added:
+        - config.env
