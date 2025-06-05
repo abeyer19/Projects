@@ -58,5 +58,5 @@ version 1.0.0 - Beta
         - config.env
 
     --= 6/5/2025 21:47 =--
-        Finalized how to get the API connection from api_connection.py to work for the entire project. On top of this, spent over 4 hours trying to figure out why I can't import functions from folder to folder when downloaded on my local drive.
+        Finalized how to get the API connection from api_connection.py to work for the entire project. On top of this, spent over 4 hours trying to figure out why I can't import functions from folder to folder when downloaded on my local drive. Need to fix this.
         Set up the first table in PGAdmin4 for the categories data.
