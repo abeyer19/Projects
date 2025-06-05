@@ -20,6 +20,8 @@ Set up for project replication:
 2. Create Google API Key for YouTube_v3
 3. Open 'config.env' file in local disk directory
     a. Replace "YOUR API KEY HERE" with your actual API key provided by Google
+    b. Move the config.env file into the main directory that stores the 'SQL - ETL/YouTube' folder structure for this project.
+        i. This will allow the API key to be called in each folders functions when Scraper functions are called elsewhere.
     *IMPORTANT -- if the .env file is not called config.env, github will not ignore when making any commits to your repository and your personal API key will be exposed if loading this project back to your own repository*
 
 
