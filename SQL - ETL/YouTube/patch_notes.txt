@@ -50,9 +50,13 @@ version 1.0.0 - Beta
     --= 6/1/2025 17:42 =--
         Finalized the database creation, but needed to create a new user on my Mac then download PGAdmin4 through Homebrew. I could not find out where the PG conf file was with the password for the application, therefore I         could not replace my password for the admin of PGAdmin4 and create new databases.
 
-    -= 6/3/2025 21:34 =--
+    --= 6/3/2025 21:34 =--
         Updated documentation and added more folder file structure.
         Added config.env file so it is already downloaded when copying repository.
 
         Items Added:
         - config.env
+
+    --= 6/5/2025 21:47 =--
+        Finalized how to get the API connection from api_connection.py to work for the entire project. On top of this, spent over 4 hours trying to figure out why I can't import functions from folder to folder when downloaded on my local drive.
+        Set up the first table in PGAdmin4 for the categories data.
