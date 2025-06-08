@@ -13,7 +13,6 @@ def search(result_limit:int, type:str, query:str=None, video_category_id:str=Non
             relevanceLanguage='en', 
             type=type, 
             q=query,
-            videoCategoryId=video_category_id,
             videoDuration=video_duration,
             )
         

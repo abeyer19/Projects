@@ -5,7 +5,7 @@ import os
 
 # Use path of Scrapers folder to load in categories.py from the Scrapers
 sys.path.insert(0, )
-from YouTube.Scrapers.categories import categories
+from categories import categories # type:ignore
 
 categories_df = categories()
 
