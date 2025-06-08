@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 
 # Use path of Scrapers folder to load in categories.py from the Scrapers
-sys.path.insert(0, '/Users/projects/Desktop/Python/Projects/SQL - ETL/YouTube/Scrapers')
+sys.path.insert(0, )
 from YouTube.Scrapers.categories import categories
 
 categories_df = categories()
