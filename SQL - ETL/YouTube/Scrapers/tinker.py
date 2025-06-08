@@ -10,11 +10,7 @@ from api_connection import youtube
     # Channel - ID, name, sub count
 
 from categories import categories
-from search import search
 
 categories_df = categories()
 
-for index, id in categories_df.iterrows():
-    print(search(1,'channel',))
-    print(id['category_id'])
-    print('--------')
+print(categories_df)

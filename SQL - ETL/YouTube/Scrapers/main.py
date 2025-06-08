@@ -8,7 +8,7 @@ import pandas as pd
 from search import search
 from categories import categories
 from collector_video import collector_video
-from collector_channels import collector_channel
+from collector_channel import collector_channel
 
 
 # Search for items on YouTube
