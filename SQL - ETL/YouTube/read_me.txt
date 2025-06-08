@@ -22,6 +22,9 @@ Set up for project replication:
     a. Replace "YOUR API KEY HERE" with your actual API key provided by Google
     b. Move the config.env file into the main directory that stores the 'SQL - ETL/YouTube' folder structure for this project.
         i. This will allow the API key to be called in each folders functions when Scraper functions are called elsewhere.
+4. Create PGAdmin4 server and database
+    a. Replace the database information in the config.env file such as host, port, user, and database name
+    
     *IMPORTANT -- if the .env file is not called config.env, github will not ignore when making any commits to your repository and your personal API key will be exposed if loading this project back to your own repository*
 
 
