@@ -1,0 +1,2 @@
+from pull_caregories import categories_df
+print(categories_df)
