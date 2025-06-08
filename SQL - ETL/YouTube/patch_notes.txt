@@ -65,3 +65,8 @@ version 1.0.0 - Beta
         Was able to fix the issue with the data not pulling across folder structures using some work-around I don't really like I found on StackOverflow. Want to refine this.
         Need to start finalizing the pipelines into PGAdmin4 and set up all databases on the server and set up the cronjob to run daily.
         Will upload all files tomorrow from my desktop to github.
+
+    --= 6/8/2025 16:04 =--
+        Updated all the work I did over the past couple of days, with some minor tweaks.
+        Am able to pull from DBS1, need to finish fully search criteria tonight and going through more tests.
+        Categories that don't pull data: 18, 21, ...
