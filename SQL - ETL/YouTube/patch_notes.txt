@@ -69,4 +69,6 @@ version 1.0.0 - Beta
     --= 6/8/2025 16:04 =--
         Updated all the work I did over the past couple of days, with some minor tweaks.
         Am able to pull from DBS1, need to finish fully search criteria tonight and going through more tests.
-        Categories that don't pull data: 18, 21, ...
+        Ran into unexpected errors when using the search.py function I created, need to understand how to search for videos by category and get results populated. Next few days will be spent fixing this while also setting up the rest of the database tables and finding a dashboarding tool to use.
+
+    --= =--
