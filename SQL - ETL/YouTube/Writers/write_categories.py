@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 
 # Use path of Scrapers folder to load in categories.py from the Scrapers
-sys.path.insert(0, )
+sys.path.insert(0, '/Users/projects/Desktop/Python/Projects/SQL - ETL/YouTube/Scrapers')
 from categories import categories # type:ignore
 
 categories_df = categories()
@@ -23,9 +23,9 @@ with psycopg.connect(host=host, port=port, dbname=dbname1, user=user) as conn_db
     with conn_dbs1.cursor() as cur:
 
         cur.execute("""
-            CREATE TABLE categories (
-                category_id integer,
-                category_title text)
+            CREATE TABLE IF NOT EXISTS categories (
+                category_id INTEGER,
+                category_title TEXT)
             """)
 
         for index, id in categories_df.iterrows():

@@ -16,7 +16,7 @@ user:str = os.getenv("user")
 dbname1:str = os.getenv("dbname1")
 
 # Connect to an existing database to DBS1
-with psycopg.connect(host="localhost", port=5432, dbname="DBS1", user="postgres") as conn_dbs1:
+with psycopg.connect(host=host, port=port, dbname=dbname1, user=user) as conn_dbs1:
 
     # Open a cursor to perform database operations on BDS1
     with conn_dbs1.cursor() as cur:
@@ -31,11 +31,20 @@ with psycopg.connect(host="localhost", port=5432, dbname="DBS1", user="postgres"
             'category_title':title
         })
 
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS video_search (
+                video_id INTEGER,
+                video_title TEXT,
+                category_id INTEGER,
+                record_date TIMESTAMP)
+            """)
+
         # Limit search categories upfront --- customizable
-        categories_filter = [1, 2, 18, 19, 20, 24, 27, 28, 31, 35]
-        categories_df = categories_df[categories_df['category_id'].isin(categories_filter)]
+        categories_filter = [1, 2, 19, 20, 24, 27, 28, 35]
+
+        # Search video by category -> can change to all by calling categories_df instead
+        #for id in categories_filter:
+        #    print(id)
+        #    print(search(result_limit=1, type='video', video_category_id=id))
         
-        #TODO: Search for videos in filtered category df
-        for id, title in categories_df.iterrows():
-            print(id, title)
-            print(search(result_limit=1, type='channel', video_category_id=id))
+        #cur.execute("INSERT INTO video_search VALUES (%s, %s, %s, %s, %s)",)
