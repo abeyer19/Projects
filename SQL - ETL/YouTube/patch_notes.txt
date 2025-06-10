@@ -71,4 +71,7 @@ version 1.0.0 - Beta
         Am able to pull from DBS1, need to finish fully search criteria tonight and going through more tests.
         Ran into unexpected errors when using the search.py function I created, need to understand how to search for videos by category and get results populated. Next few days will be spent fixing this while also setting up the rest of the database tables and finding a dashboarding tool to use.
 
-    --= =--
+    --= 6/9/2025 21:24 =--
+        Updated search.py in Scrapers to include datetime for logging search information.
+        Also created a new data table in PGAdmin4.
+        Need to figure out linking the searches and data pushes from the Writers for one seamless main.py file based on search perameters
