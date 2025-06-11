@@ -75,3 +75,8 @@ version 1.0.0 - Beta
         Updated search.py in Scrapers to include datetime for logging search information.
         Also created a new data table in PGAdmin4.
         Need to figure out linking the searches and data pushes from the Writers for one seamless main.py file based on search perameters
+    
+    --= 6/10/2025 20:13 =--
+        Updated a lot on the main.py for the Writers.
+        Also added new functionality to search and video_collector to work better with the searching functions.
+        I want to fix the search and collectors to be able to accept lists of inputs and output a dataframe so I don't have to iterate through lists of information, put into a list, then reformate as a pandas dataframe.
