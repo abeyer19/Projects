@@ -1,38 +1,28 @@
 This project is meant to teach myself the ETL/ELT process through web scraping practices using python, database creation and management, and dashboarding capabalities to provide realtime data insights.
 I am using the YouTube API web scrapers through Google (https://developers.google.com/youtube/v3) to gather information about one of my favorite learning and entertainment tools.
-I hope to finally learn and show people that I am capable of creating a database, extract data using webscrapers, transform and load data into a database, maintain and optimize the database, use cron scheduling for command prompt scripting, create realtime dashboards, provide meaningful insights gracefully and present said insights, and make further improvements to each step of the pipeline.
+I hope to finally learn and show people that I am capable of creating a database, extract data using webscrapers, transform and load data into a database, maintain and optimize the database, use cron scheduling for command prompt scripting, create realtime dashboards, provide meaningful insights gracefully.
 
 
-Tools used:
-- Python (3)
-- Google YouTube v3 API
-- PGAdmin4 (PostgreSQL locally stored server)
-- ...
+Set up for Cloning Repository and using Google API key:
+1. Create Google API Key for YouTube_v3
+2. Clone repository on local disk
+3. Create 'config.env' file in local disk directory 
+    a. open terminal
+    b. cd path/to/your/directory
+    c. type in -> echo "API_KEY=your_api_key_here" > config.env
+    *IMPORTANT -- .env file is not called config.env, github will not ignore when making any commits to your repository*
 
 
-Important Documentation:
-YouTube v3 API Documentation -> https://developers.google.com/youtube/v3/docs
-Psycopg3 Documentation -> https://www.psycopg.org/psycopg3/docs/
-
-
-Set up for project replication:
-1. Clone repository on local disk
-2. Create Google API Key for YouTube_v3
-3. Open 'config.env' file in local disk directory
-    a. Replace "YOUR API KEY HERE" with your actual API key provided by Google
-    b. Move the config.env file into the main directory that stores the 'SQL - ETL/YouTube' folder structure for this project.
-        i. This will allow the API key to be called in each folders functions when Scraper functions are called elsewhere.
-4. Create PGAdmin4 server and database
-    a. Replace the database information in the config.env file such as host, port, user, and database name
-    
-    *IMPORTANT -- if the .env file is not called config.env, github will not ignore when making any commits to your repository and your personal API key will be exposed if loading this project back to your own repository*
+API Documentation: https://developers.google.com/youtube/v3/docs
 
 
 Folder structure of the project:
 1. Scrapers
-    - Scrapers are used to gather information from Google YouTube API for extraction purposes to the database.
+    - Scrapers are the main tools used for searching, collecting, and interacting data from the YouTube_v3 API.
+    - The python files are used for individual functions designed to give users the ability to pull data easily and seamlessly together.
 2. Writers
-    - Writers are used to take the pulled data from the 'Scrapers' and write this data into the database.
-3. Lifters
-    - Lifters are used to prep, clean, manipulate, and add complex formulas to the data being pulled for data analysis and visualization purposes.
-*Note: Writers and Lifters are completely up to the individual as to which way they want to process the data being pulled. One could extract and transform first, then load into the database or load the data in first, then extract back out for manipulation and reloading/usage.
+    - Writers are used to connect to and interact with PGAdmin4 database and create tables, insert data to tables, and query data from tables (without searching again using the API quota).
+    - The python files are the main powerhouse of the code that will run daily.
+3. Lifters (in progress)
+    - Lifters will be used to pull data from PGAdmin4 database and do more complex calculations and tasks that PostgreSQL isn't as efficient for, or have the tools necessary.
+        - Thoughts are to use this on different algorithms for advanced data analytics.
