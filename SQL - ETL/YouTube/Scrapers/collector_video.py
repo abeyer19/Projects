@@ -1,6 +1,7 @@
 # Importy all packages
 import pandas as pd
 from api_connection import youtube
+from datetime import datetime
 
 
 def collector_video(video_id:str):
@@ -20,6 +21,7 @@ def collector_video(video_id:str):
     video_durations = []
     channel_ids = []
     category_ids = []
+    record_dates = []
 
     for item in response['items']:
         video_ids.append(item['id'])
@@ -31,6 +33,7 @@ def collector_video(video_id:str):
         video_durations.append(item['contentDetails']['duration'])
         channel_ids.append(item['snippet']['channelId'])
         category_ids.append(item['snippet']['categoryId'])
+        record_dates.append(datetime.now())
 
     collector_data = pd.DataFrame({
         'video_id': video_ids,
@@ -42,6 +45,7 @@ def collector_video(video_id:str):
         'video_duration': video_durations,
         'channel_id': channel_ids,
         'category_id': category_ids,
+        'record_date': record_dates,
     })
     
     return collector_data

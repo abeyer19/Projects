@@ -50,23 +50,13 @@ def search(result_limit:int, type:str, query:str=None, video_category_id:str=Non
         
         response = request.execute()
 
-        video_titles = []
         video_ids = []
-        video_category_no = []
-        record_date = []
-
 
         for item in response['items']:
-            video_titles.append(item['snippet']['title'])
             video_ids.append(item['id']['videoId'])
-            video_category_no.append(video_category_id)
-            record_date.append(datetime.now())
 
         video_data = pd.DataFrame({
             'video_id': video_ids,
-            'video_title': video_titles,
-            'category_id': video_category_id,
-            'record_date': record_date
         })
 
         return video_data
