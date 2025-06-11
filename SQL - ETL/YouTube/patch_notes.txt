@@ -80,3 +80,6 @@ version 1.0.0 - Beta
         Updated a lot on the main.py for the Writers.
         Also added new functionality to search and video_collector to work better with the searching functions.
         I want to fix the search and collectors to be able to accept lists of inputs and output a dataframe so I don't have to iterate through lists of information, put into a list, then reformate as a pandas dataframe.
+        
+        -= 21:09 =-
+        Fixed the write_categories to fix duplicate loading, will only need the cron job for this to run once a month or longer incase YouTube changes/adds more categories.
