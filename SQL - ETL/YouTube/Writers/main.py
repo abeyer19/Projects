@@ -8,6 +8,7 @@ import os
 sys.path.insert(0, '/Users/projects/Desktop/Python/Projects/SQL - ETL/YouTube/Scrapers')
 from search import search # type:ignore
 from collector_video import collector_video # type:ignore
+from collector_channel import collector_channel # type:ignore
 
 # Load in config.env file for Database connection secrets
 load_dotenv("config.env")
@@ -32,9 +33,12 @@ with psycopg.connect(host=host, port=port, dbname=dbname1, user=user) as conn_db
             'category_title':title
         })
 
+        # --------------------------------------------------------------------------
+
+        # Create videos table in PGAdmin4
         cur.execute("""
             CREATE TABLE IF NOT EXISTS videos (
-                video_id INTEGER,
+                video_id TEXT,
                 video_title TEXT,
                 publication_date TIMESTAMP,
                 view_count INTEGER,
@@ -46,12 +50,10 @@ with psycopg.connect(host=host, port=port, dbname=dbname1, user=user) as conn_db
                 record_date TIMESTAMP)
             """)
 
-        # -------------------------------------------------
-
         # Limit search categories upfront --- customizable
         categories_filter = [1, 2, 19, 20, 24, 27, 28, 35]
 
-        # Search by video id and concat into a new df
+        # Search by video IDs and concat into a new df
         video_search_results_list = []
 
         for id in categories_filter:
@@ -62,15 +64,39 @@ with psycopg.connect(host=host, port=port, dbname=dbname1, user=user) as conn_db
         # Take video IDs and use video_collector
         collector_video_results = []
 
-        for id in video_search_results_df.iterrows():
+        for row in video_search_results_df.iterrows():
             collector_video_results.append(collector_video(video_id=video_search_results_df['video_id']))
 
         collector_video_results_df = pd.concat(collector_video_results, ignore_index=True)
-
-        print(collector_video_results_df)
         
         # Push video_collector results to PGAdmin4
-        #cur.execute("INSERT INTO videos (video_id, video_title, publication_date, view_count, like_count, comment_count, video_duration, channel_id, category_id, record_date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
-        #            (collector_video_results['video_id'], collector_video_results['video_title'], collector_video_results['publication_date'], collector_video_results['view_count'], collector_video_results['like_count'], collector_video_results['comment_count'], collector_video_results['video_duration'], collector_video_results['channel_id'], collector_video_results['category_id'], collector_video_results['record_date'],))
+        cur.execute("INSERT INTO videos (video_id, video_title, publication_date, view_count, like_count, comment_count, video_duration, channel_id, category_id, record_date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                    (collector_video_results['video_id'], collector_video_results['video_title'], collector_video_results['publication_date'], collector_video_results['view_count'], collector_video_results['like_count'], collector_video_results['comment_count'], collector_video_results['video_duration'], collector_video_results['channel_id'], collector_video_results['category_id'], collector_video_results['record_date'],))
         
-        #conn_dbs1.commit()
+        # --------------------------------------------------------------------------
+
+        # Create channels table in PGAdmin4
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS channels (
+                channel_id TEXT,
+                channel_name TEXT,
+                channel_view_count INTEGER,
+                subscriber_count INTEGER,
+                video_count INTEGER,
+                record_date TIMESTAMP)
+            """)
+        
+        # Search by channel IDs and concat into a new df
+        channel_search_results = []
+
+        for row in collector_video_results_df.iterrows():
+            channel_search_results.append(collector_channel(channel_id=collector_video_results_df['channel_id']))
+
+        collector_channel_results_df = pd.concat(channel_search_results, ignore_index=True)
+
+        # Push channel_collector results to PGAdmin4
+        cur.execute("INSTERT INTO channels (channel_id, channel_name, channel_view_count, subscriber_count, video_count, record_date) VALUES (%s, %s, %s, %s, %s, %s)",
+                    (collector_channel_results_df['channel_id'], collector_channel_results_df['channel_name'], collector_channel_results_df['channel_view_count'], collector_channel_results_df['subscriber_count'], collector_channel_results_df['video_count'], collector_channel_results_df['record_date'],))
+
+        # Commit video and channel data changes to DBS1 tables
+        conn_dbs1.commit()
