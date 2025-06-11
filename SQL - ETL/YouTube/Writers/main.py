@@ -58,8 +58,6 @@ with psycopg.connect(host=host, port=port, dbname=dbname1, user=user) as conn_db
             video_search_results_list.append(search(result_limit=1, type='video', video_duration='medium',  video_category_id=id))
 
         video_search_results_df = pd.concat(video_search_results_list, ignore_index=True)
-        
-        print(video_search_results_df)
 
         # Take video IDs and use video_collector
         collector_video_results = []
@@ -67,7 +65,9 @@ with psycopg.connect(host=host, port=port, dbname=dbname1, user=user) as conn_db
         for id in video_search_results_df.iterrows():
             collector_video_results.append(collector_video(video_id=video_search_results_df['video_id']))
 
-        print(collector_video_results)
+        collector_video_results_df = pd.concat(collector_video_results, ignore_index=True)
+
+        print(collector_video_results_df)
         
         # Push video_collector results to PGAdmin4
         #cur.execute("INSERT INTO videos (video_id, video_title, publication_date, view_count, like_count, comment_count, video_duration, channel_id, category_id, record_date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
