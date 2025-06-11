@@ -30,8 +30,7 @@ with psycopg.connect(host=host, port=port, dbname=dbname1, user=user) as conn_db
 
         for index, id in categories_df.iterrows():
             print(id['category_id'], id['category_title'])
-            cur.execute("INSERT INTO categories (category_id, category_title) VALUES (%s, %s)",
+            cur.execute("INSERT INTO categories (category_id, category_title) VALUES (%s, %s) ON CONFLICT (category_id) DO NOTHING",
                         (id['category_id'], id['category_title'],))
             
-            # Un-Commented out the commit function below when moving to production
-            #conn_dbs1.commit()
+            conn_dbs1.commit()
