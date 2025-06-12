@@ -2,6 +2,7 @@
 import pandas as pd
 from api_connection import youtube
 
+
 def categories():
     request = youtube.videoCategories().list(part='snippet', regionCode='US')
     response = request.execute()

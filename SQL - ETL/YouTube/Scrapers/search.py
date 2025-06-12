@@ -20,18 +20,12 @@ def search(result_limit:int, type:str, query:str=None, video_category_id:str=Non
         response = request.execute()
 
         channel_ids = []
-        channel_names = []
-        record_date = []
 
         for item in response['items']:
             channel_ids.append(item['id']['channelId'])
-            channel_names.append(item['snippet']['channelTitle'])
-            record_date.append(datetime.now())
 
         channel_data = pd.DataFrame({
             'channel_id': channel_ids,
-            'channel_name': channel_names,
-            'record_date': record_date
         })
 
         return channel_data
@@ -63,6 +57,4 @@ def search(result_limit:int, type:str, query:str=None, video_category_id:str=Non
 
 
 # --- TESTING ---
-#categories_df = categories()
 #print(search(1, 'channel', 'Gaming'))
-#print(search(result_limit=5, type='video', video_category_id='20', video_duration='long'))
