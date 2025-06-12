@@ -3,7 +3,7 @@ import pandas as pd
 from api_connection import youtube
 from datetime import datetime
 
-# Search is only to be used for basic searching of channel, video, and playlist metadata such as ID and Titles, all other statistics to be collected through collector.py
+# Search is only to be used for basic searching of channel, video, and playlist metadata such as ID and Titles; all other statistics to be collected through collector.py
 def search(result_limit:int, type:str, query:str=None, video_category_id:str=None, video_duration:str=None):
     # To be used only if 'type' = 'channel'
     if type == 'channel':
