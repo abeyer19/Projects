@@ -64,14 +64,14 @@ with psycopg.connect(host=host, port=port, dbname=dbname1, user=user) as conn_db
         # Take video IDs and use video_collector
         collector_video_results = []
 
-        for row in video_search_results_df.iterrows():
+        for index, row in video_search_results_df.iterrows():
             collector_video_results.append(collector_video(video_id=video_search_results_df['video_id']))
 
         collector_video_results_df = pd.concat(collector_video_results, ignore_index=True)
         
         # Push video_collector results to PGAdmin4
         cur.execute("INSERT INTO videos (video_id, video_title, publication_date, view_count, like_count, comment_count, video_duration, channel_id, category_id, record_date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
-                    (collector_video_results['video_id'], collector_video_results['video_title'], collector_video_results['publication_date'], collector_video_results['view_count'], collector_video_results['like_count'], collector_video_results['comment_count'], collector_video_results['video_duration'], collector_video_results['channel_id'], collector_video_results['category_id'], collector_video_results['record_date'],))
+                    (collector_video_results_df['video_id'], collector_video_results_df['video_title'], collector_video_results_df['publication_date'], collector_video_results_df['view_count'], collector_video_results_df['like_count'], collector_video_results_df['comment_count'], collector_video_results_df['video_duration'], collector_video_results_df['channel_id'], collector_video_results_df['category_id'], collector_video_results_df['record_date'],))
         
         # --------------------------------------------------------------------------
 
@@ -89,7 +89,7 @@ with psycopg.connect(host=host, port=port, dbname=dbname1, user=user) as conn_db
         # Search by channel IDs and concat into a new df
         channel_search_results = []
 
-        for row in collector_video_results_df.iterrows():
+        for index, row in collector_video_results_df.iterrows():
             channel_search_results.append(collector_channel(channel_id=collector_video_results_df['channel_id']))
 
         collector_channel_results_df = pd.concat(channel_search_results, ignore_index=True)
