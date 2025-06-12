@@ -83,3 +83,13 @@ version 1.0.0 - Beta
         
         -= 21:09 =-
         Fixed the write_categories to fix duplicate loading, will only need the cron job for this to run once a month or longer incase YouTube changes/adds more categories.
+
+    --= 6/11/2025 21:47 =--
+        Updated the dumbest error (referencing the wrong variable) in the main.py file for 'Writers', and in doing so while testing EVERY SINGLE FUNCTION THAT LEADS INTO IT, I wasted all my quota for the day.
+            - Learning from this is simply -- look at your code before running through each step with tests, especially if it is Cloud Based API usage that will cost you at a enterprise level.
+        Cleaned up a lot of the other python files as well to simplify the pipeline and got rid of testing scripts.
+        Spent over 2 hours working through Docker, only to have Superset completely break during download, going to switch to Google Looker if applicable to what I am doing.
+        
+        Items Added:
+        - pully.py
+
