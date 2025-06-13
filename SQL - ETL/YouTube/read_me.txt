@@ -38,7 +38,7 @@ Set up for Cloning Repository and using Google API key:
 
 Folder structure of the project:
 1. Scrapers
-    - Scrapers are the main tools used for searching, collecting, and interacting data from the YouTube_v3 API.
+    - Scrapers are the main tools used for searching, collecting, and interacting with data from the YouTube_v3 API.
     - The python files are used for individual functions designed to give users the ability to pull data easily and seamlessly together.
 2. Writers
     - Writers are used to connect to and interact with PGAdmin4 database and create tables, insert data to tables, and query data from tables (without searching again using the API quota).
