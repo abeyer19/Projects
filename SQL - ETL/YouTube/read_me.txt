@@ -17,13 +17,13 @@ Tools used:
 3. Software
     a. VSCode
     b. PGAdmin4
-    c. Docker
-    d. Apache Superset
+    c. Metabase
 
 
 Documentation:
 API Documentation - https://developers.google.com/youtube/v3/docs
 psycopg3 Documentation - https://www.psycopg.org/psycopg3/docs/index.html
+Metabase Documentation - https://www.metabase.com/docs/latest/
 
 
 Set up for Cloning Repository and using Google API key:

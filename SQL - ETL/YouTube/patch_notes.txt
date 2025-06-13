@@ -93,3 +93,7 @@ version 1.0.0 - Beta
         Items Added:
         - pully.py
 
+    --= 6/12/20:10 =--
+        Finalized all the issues within the main.py Writers folder and loaded the first data pull into PGAdmin4.
+        Downloaded Metabase and started messing around with the dashboarding tool (it uses PostgreSQL which is nice for making customized tables and graphs).
+        
