@@ -100,3 +100,6 @@ version 1.0.0 - Beta
     --= 6/15/2025 13:16 =--
         Started to run the main.py file twice a day and have gotten good results with no errors when pushing to DBS1.
         No updates to production code, just letting the data accumulate while I work through other issues with the dashboarding tools.
+
+    --= 6/16/2025 18:30 =--
+        Created the cronjob to run at 8AM and 6PM daily.
