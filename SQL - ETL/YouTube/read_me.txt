@@ -37,7 +37,12 @@ Set up for Cloning Repository and using Google API key:
     *IMPORTANT -- if the .env file is not called config.env, github will not ignore when making any commits to your repository, if you want to call it something different your will need to add the file name to .gitignore*
 4. Set up PGAdmin4 server
     a. open config.env file
-    b. replace -> "" -- with your database information 
+    b. replace -> "" -- with your database information
+5. Set up cronjob in Terminal
+    a. Open terminal
+    b. Type "crontab -e"
+    c. Provide cronjob schedule and save
+    d. Check that cronjob is saved by typing "crontab -l"
 
 Folder structure of the project:
 1. Scrapers
