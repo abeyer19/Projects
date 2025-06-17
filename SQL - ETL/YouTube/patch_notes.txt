@@ -103,3 +103,6 @@ version 1.0.0 - Beta
 
     --= 6/16/2025 18:30 =--
         Created the cronjob to run at 8AM and 6PM daily.
+        
+        -= 21:01 =-
+        Updated code to run 10 items instead of 1, to speed up data collection process. Will adjust once I see what the daily quota usage is and if I have enough space.
