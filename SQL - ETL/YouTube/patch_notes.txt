@@ -111,3 +111,7 @@ version 1.0.0 - Beta
         Updated pully.py to be customizable and functional.
         Updated quota limit pulls on main.py in Writers.
         Experimented with PGAdmin4 PostgreSQL queries -- will want to research functions as well as triggers to automatically update DBP1 database with queried data for dashboarding.
+
+    --= 6/18/2025 12:52 =--
+        Found an error with main.py categories_filter list, where search.py needs a string type for category_id argument in function input. -- need to test more tomorrow when I have quota back.
+        
