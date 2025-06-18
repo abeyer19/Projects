@@ -106,3 +106,7 @@ version 1.0.0 - Beta
         
         -= 21:01 =-
         Updated code to run 10 items instead of 1, to speed up data collection process. Will adjust once I see what the daily quota usage is and if I have enough space.
+
+    --= 6/17/2025 21:24 =--
+        Updated pully.py to be customizable and functional.
+        Experimented with PGAdmin4 PostgreSQL queries -- will want to research functions as well as triggers to automatically update DBP1 database with queried data for dashboarding.
