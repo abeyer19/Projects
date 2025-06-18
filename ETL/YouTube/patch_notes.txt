@@ -114,4 +114,4 @@ version 1.0.0 - Beta
 
     --= 6/18/2025 12:52 =--
         Found an error with main.py categories_filter list, where search.py needs a string type for category_id argument in function input. -- need to test more tomorrow when I have quota back.
-        
+        Updated pully.py to be more dynamic based on what table was given in the arguments of the function.
