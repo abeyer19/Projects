@@ -116,3 +116,9 @@ version 1.0.0 - Beta
         Found an error with main.py categories_filter list, where search.py needs a string type for category_id argument in function input. -- need to test more tomorrow when I have quota back.
         Updated pully.py to be more dynamic based on what table was given in the arguments of the function.
         Started to work on dashboarding tables calculations in Lifters
+
+    --= 6/19/2025 19:07 =--
+        Troubleshot the errors with the search function returning no video id's, but need to finalize as my quota quickly ran out yesterday. Most likely having too many perameters being passed to the .search().list() on Googles API.
+
+    --= 6/20/2025 14:07 =--
+        Started to work on the Medium article and added more to the documentation read_me.txt file on GitHub.
