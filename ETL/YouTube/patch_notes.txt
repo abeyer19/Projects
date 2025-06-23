@@ -122,3 +122,6 @@ version 1.0.0 - Beta
 
     --= 6/20/2025 14:07 =--
         Started to work on the Medium article and added more to the documentation read_me.txt file on GitHub.
+
+    --= 6/23/2025 =--
+        Worked on getting the article written and need to finish the rest of the project first.
