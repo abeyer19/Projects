@@ -1,18 +1,16 @@
 # Importy all packages
 import pandas as pd
 from api_connection import youtube
-from datetime import datetime
 
 # Search is only to be used for basic searching of channel, video, and playlist metadata such as ID and Titles; all other statistics to be collected through collector.py
 def search(result_limit:int, type:str, query:str=None, video_category_id:int=None, video_duration:str=None):
     # To be used only if 'type' = 'channel'
     if type == 'channel':
         request = youtube.search().list(
-            part='id, snippet',
+            part='id',
             maxResults=result_limit,
-            order='relevance',
             regionCode='US', 
-            type=type, 
+            type=type,
             q=query,
             )
         
@@ -32,15 +30,13 @@ def search(result_limit:int, type:str, query:str=None, video_category_id:int=Non
     # To be used only if 'type' = 'video'
     elif type == 'video':
         request = youtube.search().list(
-            part='id, snippet',
+            part='id',
             maxResults=result_limit,
-            order='relevance',
             regionCode='US',
             type=type,
             q=query,
             videoCategoryId=video_category_id,
-            videoDuration=video_duration,
-            )
+            videoDuration=video_duration,)
         
         response = request.execute()
 
@@ -54,7 +50,3 @@ def search(result_limit:int, type:str, query:str=None, video_category_id:int=Non
         })
 
         return video_data
-
-
-# --- TESTING ---
-#print(search(result_limit=1, type='video', video_category_id=35))
