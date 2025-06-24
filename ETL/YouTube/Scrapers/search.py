@@ -11,10 +11,9 @@ def search(result_limit:int, type:str, query:str=None, video_category_id:int=Non
             part='id, snippet',
             maxResults=result_limit,
             order='relevance',
-            relevanceLanguage='en', 
+            regionCode='US', 
             type=type, 
             q=query,
-            videoDuration=video_duration,
             )
         
         response = request.execute()
@@ -36,11 +35,12 @@ def search(result_limit:int, type:str, query:str=None, video_category_id:int=Non
             part='id, snippet',
             maxResults=result_limit,
             order='relevance',
-            relevanceLanguage='en',
+            regionCode='US',
             type=type,
             q=query,
             videoCategoryId=video_category_id,
-            videoDuration=video_duration,)
+            videoDuration=video_duration,
+            )
         
         response = request.execute()
 
