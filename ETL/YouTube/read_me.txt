@@ -34,7 +34,7 @@ Set up for Cloning Repository and using Google API key:
 3. Edit 'config.env' file in local disk directory 
     a. open config.env file
     b. replace -> API_KEY="your_api_key_here" -- with your actual API key given.
-    *IMPORTANT -- if the .env file is not called config.env, github will not ignore when making any commits to your repository, if you want to call it something different your will need to add the file name to .gitignore*
+    *IMPORTANT -- if the .env file is not called config.env, github will not ignore when making any commits to your repository, if you want to call it something different you will need to add the file name to .gitignore*
 4. Set up PGAdmin4 server
     a. open config.env file
     b. replace -> "" -- with your database information
