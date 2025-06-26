@@ -8,19 +8,19 @@ This project is meant to be very simply in practice, having almost no experience
 
 ### Tools used:
 1. Languages
-⋅⋅⋅⋅a. Python
-⋅⋅⋅⋅b. PostgreSQL
-3. Packages
-⋅⋅⋅⋅a. pandas
-⋅⋅⋅⋅b. psycopg3
-⋅⋅⋅⋅c. dotenv
-⋅⋅⋅⋅d. sys
-⋅⋅⋅⋅e. os
-⋅⋅⋅⋅f. googleapiclient.discovery
-4. Software
-⋅⋅⋅⋅a. VSCode
-⋅⋅⋅⋅b. PGAdmin4
-⋅⋅⋅⋅c. Metabase
+    a. Python
+    b. PostgreSQL
+2. Packages
+    a. pandas
+    b. psycopg3
+    c. dotenv
+    d. sys
+    e. os
+    f. googleapiclient.discovery
+3. Software
+    a. VSCode
+    b. PGAdmin4
+    c. Metabase
 
 
 ### Documentation:
@@ -43,19 +43,19 @@ Metabase Documentation - https://www.metabase.com/docs/latest/
 
 ### Folder structure of the project:
 1. Scrapers
-⋅⋅⋅⋅- Scrapers are the main tools used for searching, collecting, and interacting with data from the YouTube_v3 API.
-⋅⋅⋅⋅- The python files are used for individual functions designed to give users the ability to pull data easily and seamlessly together.
-⋅⋅⋅⋅⋅⋅⋅⋅a. api_connection.py -> used for connection to Google's API tool.
-⋅⋅⋅⋅⋅⋅⋅⋅b. categories.py -> used to pull categories from YouTube (not used each time, only ran once for database table).
-⋅⋅⋅⋅⋅⋅⋅⋅c. search.py -> used to search for video or channel id's based on arguments passed into the search() function.
-⋅⋅⋅⋅⋅⋅⋅⋅d. collector_video.py -> used to collect video data from search() results.
-⋅⋅⋅⋅⋅⋅⋅⋅e. collector_channel.py -> used to collect channel data from search() results or collector_video() results.
+    - Scrapers are the main tools used for searching, collecting, and interacting with data from the YouTube_v3 API.
+    - The python files are used for individual functions designed to give users the ability to pull data easily and seamlessly together.
+        a. api_connection.py -> used for connection to Google's API tool.
+        b. categories.py -> used to pull categories from YouTube (not used each time, only ran once for database table).
+        c. search.py -> used to search for video or channel id's based on arguments passed into the search() function.
+        d. collector_video.py -> used to collect video data from search() results.
+        e. collector_channel.py -> used to collect channel data from search() results or collector_video() results.
 2. Writers
-⋅⋅⋅⋅- Writers are used to connect to and interact with PGAdmin4 database and create tables, insert data to tables, and query data from tables (without searching again using the API quota).
-⋅⋅⋅⋅- The python files are the main powerhouse of the code that will run daily.
-⋅⋅⋅⋅⋅⋅⋅⋅a. writer.py -> used to write all the data to PGAdmin4 database using search.py, collector_video.py, and collector_channel.py in tandum.
-⋅⋅⋅⋅⋅⋅⋅⋅b. write_categories.py -> used to write category data to PGAdmin4 database (not used each time, only ran once).
+    - Writers are used to connect to and interact with PGAdmin4 database and create tables, insert data to tables, and query data from tables (without searching again using the API quota).
+    - The python files are the main powerhouse of the code that will run daily.
+        a. writer.py -> used to write all the data to PGAdmin4 database using search.py, collector_video.py, and collector_channel.py in tandum.
+        b. write_categories.py -> used to write category data to PGAdmin4 database (not used each time, only ran once).
 3. Lifters (in progress)
-⋅⋅⋅⋅- Lifters will be used to pull data from PGAdmin4 database and do more complex calculations and tasks that PostgreSQL isn't as efficient for, or doesn't have the tools necessary.
-⋅⋅⋅⋅⋅⋅⋅⋅- Thoughts are to use this on different algorithms for advanced data analytics, while all other functions should be handled by stored prodecures or views.
-⋅⋅⋅⋅⋅⋅⋅⋅a. pully.py -> used to extract data from the PGAdmin4 database and be dynamic to use on any database or table.
+    - Lifters will be used to pull data from PGAdmin4 database and do more complex calculations and tasks that PostgreSQL isn't as efficient for, or doesn't have the tools necessary.
+        - Thoughts are to use this on different algorithms for advanced data analytics, while all other functions should be handled by stored prodecures or views.
+        a. pully.py -> used to extract data from the PGAdmin4 database and be dynamic to use on any database or table.
