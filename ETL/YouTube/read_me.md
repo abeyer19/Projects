@@ -8,19 +8,19 @@ This project is meant to be very simply in practice, having almost no experience
 
 ### Tools used:
 1. Languages
-    a. Python
-    b. PostgreSQL
+    - Python
+    - PostgreSQL
 2. Packages
-    a. pandas
-    b. psycopg3
-    c. dotenv
-    d. sys
-    e. os
-    f. googleapiclient.discovery
+    - pandas
+    - psycopg3
+    - dotenv
+    - sys
+    - os
+    - googleapiclient.discovery
 3. Software
-    a. VSCode
-    b. PGAdmin4
-    c. Metabase
+    - VSCode
+    - PGAdmin4
+    - Metabase
 
 
 ### Documentation:
