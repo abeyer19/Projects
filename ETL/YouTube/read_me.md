@@ -38,7 +38,11 @@ Metabase Documentation - https://www.metabase.com/docs/latest/
     - The python files are the main powerhouse of the code that will run daily.
         - writer.py -> used to write all the data to PGAdmin4 database using search.py, collector_video.py, and collector_channel.py in tandum.
         - write_categories.py -> used to write category data to PGAdmin4 database (not used each time, only ran once).
-     
+3. Lifters (in progress)
+    - Lifters will be used to pull data from PGAdmin4 database and do more complex calculations and tasks that PostgreSQL isn't as efficient for, or doesn't have the tools necessary.
+        *Thoughts are to use this on different algorithms for advanced data analytics, while all other functions should be handled by stored prodecures or views.*
+        - pully.py -> used to extract data from the PGAdmin4 database and be dynamic to use on any database or table.     
+
 
 ## Phase One
 Phase one of the project is meant to be an introduction to data engineering for those who are looking to break into the space, including myself, and to have the groundwork laid out for future iterations of improvement.
@@ -59,7 +63,3 @@ Phase one of the project is meant to be an introduction to data engineering for 
     - VSCode
     - PGAdmin4
     - Metabase
-3. Lifters (in progress)
-    - Lifters will be used to pull data from PGAdmin4 database and do more complex calculations and tasks that PostgreSQL isn't as efficient for, or doesn't have the tools necessary.
-        *Thoughts are to use this on different algorithms for advanced data analytics, while all other functions should be handled by stored prodecures or views.*
-        - pully.py -> used to extract data from the PGAdmin4 database and be dynamic to use on any database or table.
