@@ -134,4 +134,4 @@ version 1.0.0 - Beta
 
     --= 6/28/2025 =--
         Figured out what was wrong with the search() function, there needs to be an argument passed to 'q' as the YouTube API does not support random searches.
-
+        Metabase functionality is terrible and I've been running into so many issues, will most likely just switch to total python using Seaborn for visualizations as they are more dynamic in nature.
