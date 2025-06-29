@@ -131,3 +131,7 @@ version 1.0.0 - Beta
         Updated search() in writer to return 100 items and not 25, but still can't figure out why some searches pull data and others don't. Found that there really is no consistency with this and you get whatever category you get that is pushed to the database everytime you run it. I can't help but feel that Google does this on purpose, I tested this with the rest of my quota for the day and rerunning the same exact search() function will result in a different dataframe than what was loaded into DBS1. -- will need to monitor this the rest of the time as well as log data, but really need to start accumulating more data in general.
         I think I would like to build my own dashboarding tool in Java or something if I have time to learn it before MSA, but maybe some day.
         Put some more progress towards the article as well in the background to work in tandem.
+
+    --= 6/28/2025 =--
+        Figured out what was wrong with the search() function, there needs to be an argument passed to 'q' as the YouTube API does not support random searches.
+
