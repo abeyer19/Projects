@@ -21,7 +21,8 @@ def search(result_limit:int, type:str, query:str=None, video_category_id:int=Non
         channel_ids = []
 
         for item in response['items']:
-            channel_ids.append(item['id']['channelId'])
+            if 'channelId' in response['items']:
+                channel_ids.append(item['id']['channelId'])
 
         channel_data = pd.DataFrame({
             'channel_id': channel_ids,
@@ -48,7 +49,8 @@ def search(result_limit:int, type:str, query:str=None, video_category_id:int=Non
         video_ids = []
 
         for item in response['items']:
-            video_ids.append(item['id']['videoId'])
+            if 'videoId' in response['items']:
+                video_ids.append(item['id']['videoId'])
 
         video_data = pd.DataFrame({
             'video_id': video_ids,
@@ -71,7 +73,8 @@ def search(result_limit:int, type:str, query:str=None, video_category_id:int=Non
         video_ids = []
 
         for item in response['items']:
-            video_ids.append(item['id']['videoId'])
+            if 'videoId' in response['items']:
+                video_ids.append(item['id']['videoId'])
 
         video_data = pd.DataFrame({
             'video_id': video_ids,
