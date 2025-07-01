@@ -21,7 +21,7 @@ def search(result_limit:int, type:str, query:str=None, video_category_id:int=Non
         channel_ids = []
 
         for item in response['items']:
-            if 'channelId' in response['items']:
+            if 'channelId' in item['id']:
                 channel_ids.append(item['id']['channelId'])
 
         channel_data = pd.DataFrame({
@@ -31,34 +31,11 @@ def search(result_limit:int, type:str, query:str=None, video_category_id:int=Non
         return channel_data
 
     # To be used only if 'type' = 'video'
-    elif type == 'video' and query is None:
-
-        rand_query = random.choice(string.ascii_lowercase)
-
-        request = youtube.search().list(
-            part='id',
-            maxResults=result_limit,
-            regionCode='US',
-            type=type,
-            q=rand_query,
-            videoCategoryId=video_category_id,
-            videoDuration=video_duration,)
-        
-        response = request.execute()
-        
-        video_ids = []
-
-        for item in response['items']:
-            if 'videoId' in response['items']:
-                video_ids.append(item['id']['videoId'])
-
-        video_data = pd.DataFrame({
-            'video_id': video_ids,
-        })
-
-        return video_data
-        
     elif type == 'video':
+
+        if query is None:
+                query = random.choice(string.ascii_lowercase)
+
         request = youtube.search().list(
             part='id',
             maxResults=result_limit,
@@ -73,7 +50,7 @@ def search(result_limit:int, type:str, query:str=None, video_category_id:int=Non
         video_ids = []
 
         for item in response['items']:
-            if 'videoId' in response['items']:
+            if 'videoId' in item['id']:
                 video_ids.append(item['id']['videoId'])
 
         video_data = pd.DataFrame({
