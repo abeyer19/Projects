@@ -135,3 +135,7 @@ version 1.0.0 - Beta
     --= 6/28/2025 =--
         Figured out what was wrong with the search() function, there needs to be an argument passed to 'q' as the YouTube API does not support random searches.
         Metabase functionality is terrible and I've been running into so many issues, will most likely just switch to total python using Seaborn for visualizations as they are more dynamic in nature.
+
+    --= 7/1/2025 =--
+        Still going to use Metabase since I can't find any better dashboarding tool, but visualizations will be weak sauce.
+        Worked on the article more and brainstorming dashboarding ideas.
