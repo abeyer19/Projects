@@ -139,3 +139,7 @@ version 1.0.0 - Beta
     --= 7/1/2025 =--
         Still going to use Metabase since I can't find any better dashboarding tool, but visualizations will be weak sauce.
         Worked on the article more and brainstorming dashboarding ideas.
+
+    --= 7/2/2025 =--
+        Writer and subsequent collectors are now finally working and gathering data fully now.
+        
