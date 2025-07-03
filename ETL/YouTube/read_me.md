@@ -77,4 +77,5 @@ Phase one of the project is meant to be an introduction to data engineering for 
     - Metabase - Dashboarding
 
 
-### Data insights
+### Dashboard functionality:
+1. 
