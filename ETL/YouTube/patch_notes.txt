@@ -142,4 +142,4 @@ version 1.0.0 - Beta
 
     --= 7/2/2025 =--
         Writer and subsequent collectors are now finally working and gathering data fully now.
-        
+        Finalized the Videos Dashboard, need to work on the Channels Dashboard now.
