@@ -43,7 +43,7 @@ Metabase Documentation - https://www.metabase.com/docs/latest/
         - pully.py -> used to extract data from the PGAdmin4 database and be dynamic to use on any database or table.
 4. SQL Code
     - SQL Code are stored the views that are stored within the PGAdmin4 database, but shown for those replicating the project.
-        - channel_score.sql -> ----------------------------------------- NEED TO FIX THIS ------------------------------------------
+        - channel_score.sql -> used to find the average view per video rate for each video collected from a channel, compared to the average view per video for the entire channel to see trend over time and if any videos stand out compared to the average of the channel.
         - top_videos_current -> used to show which videos have the highest interaction scores based on the most recent record date.
         - videos_engagement_rate.sql -> used to show the engagement rate by video for the most recent record date, allowing for common comparisons across different video interaction sizes.
 5. Additional files
