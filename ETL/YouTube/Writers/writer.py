@@ -57,7 +57,7 @@ with psycopg.connect(host=host, port=port, dbname=dbname1, user=user) as conn_db
         video_search_results_list = []
 
         for cat_id in categories_filter:
-            video_search_results_list.append(search(result_limit=25, type='video', video_category_id=cat_id, video_duration='medium'))
+            video_search_results_list.append(search(result_limit=100, type='video', video_category_id=cat_id, video_duration='medium'))
 
         video_search_results_df = pd.concat(video_search_results_list, ignore_index=True)
 
