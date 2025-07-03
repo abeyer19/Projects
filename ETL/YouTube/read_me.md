@@ -17,9 +17,11 @@ Metabase Documentation - https://www.metabase.com/docs/latest/
 2. Clone repository on local disk
 3. Edit 'config.env' file in local disk directory 
     - open config.env file
-    - replace -> API_KEY="your_api_key_here" -- with your actual API key given.\
-    *IMPORTANT -- if the .env file is not called config.env, github will not ignore when making any commits to your repository, if you want to call it something different you will need to add the file name to .gitignore*
-4. Set up PGAdmin4 server
+    - replace -> scrapers_path="YOUR PATH TO LOCAL SCRAPER FOLDER" -- with the local path to the 'scrapers' folder you downloaded the repo to
+4. Edit 'config.env' file in local disk directory 
+    - open config.env file
+    - replace -> API_KEY="your_api_key_here" -- with your actual API key given.
+5. Set up PGAdmin4 server
     - open config.env file
     - replace -> host, port, user, dbname1 (2,3,4) with your database information
 
