@@ -4,18 +4,19 @@ import sys
 from dotenv import load_dotenv
 import os
 
-# Use path of Scrapers folder to load in __ from the Scrapers
-sys.path.insert(0, '/Users/projects/Desktop/Python/Projects/SQL - ETL/YouTube/Scrapers')
-from search import search # type:ignore
-from collector_video import collector_video # type:ignore
-from collector_channel import collector_channel # type:ignore
-
 # Load in config.env file for Database connection secrets
 load_dotenv("config.env")
 host:str = os.getenv("host")
 port:int = os.getenv("port")
 user:str = os.getenv("user")
 dbname1:str = os.getenv("dbname1")
+scrapers_path:str = os.getenv("scrapers_path")
+
+# Use path of Scrapers folder to load in __ from the Scrapers
+sys.path.insert(0, scrapers_path)
+from search import search # type:ignore
+from collector_video import collector_video # type:ignore
+from collector_channel import collector_channel # type:ignore
 
 # Connect to an existing database to DBS1
 with psycopg.connect(host=host, port=port, dbname=dbname1, user=user) as conn_dbs1:

@@ -3,18 +3,19 @@ import sys
 from dotenv import load_dotenv
 import os
 
+# Load in config.env file for Database connection secrets
+load_dotenv("config.env")
+host:str = os.getenv("host")
+port:int = os.getenv("port")
+user:str = os.getenv("user")
+dbname1:str = os.getenv("dbname1")
+scrapers_path:str = os.getenv("scrapers_path")
+
 # Use path of Scrapers folder to load in categories.py from the Scrapers
-sys.path.insert(0, '/Users/projects/Desktop/Python/Projects/SQL - ETL/YouTube/Scrapers')
+sys.path.insert(0, scrapers_path)
 from categories import categories # type:ignore
 
 categories_df = categories()
-
-# Load in config.env file for Database connection secrets
-load_dotenv("config.env")
-host = os.getenv("host")
-port:int = os.getenv("port")
-user = os.getenv("user")
-dbname1 = os.getenv("dbname1")
 
 # Connect to an existing database to DBS1
 with psycopg.connect(host=host, port=port, dbname=dbname1, user=user) as conn_dbs1:
