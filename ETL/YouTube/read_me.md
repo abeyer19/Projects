@@ -59,7 +59,9 @@ Phase one of the project is meant to be an introduction to data engineering for 
     - sys
     - os
     - googleapiclient.discovery
+    - random
+    - string
 3. Software
-    - VSCode
-    - PGAdmin4
-    - Metabase
+    - VSCode - IDE
+    - PGAdmin4 - Database management
+    - Metabase - Dashboarding
