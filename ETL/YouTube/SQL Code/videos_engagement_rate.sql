@@ -19,7 +19,7 @@
     videos_channels.view_count,
     videos_channels.like_count,
     videos_channels.comment_count,
-    (videos_channels.like_count + videos_channels.comment_count) / 100 AS engagement_rate,
+    ((videos_channels.like_count + videos_channels.comment_count) * videos_channels.view_count) / 100 AS engagement_rate,
     videos_channels.video_channel_id AS channel_id,
     videos_channels.channel_name,
     videos_channels.category_id,
