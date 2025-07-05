@@ -75,6 +75,7 @@ Phase one of the project is meant to be an introduction to data engineering for 
     - VSCode - IDE
     - PGAdmin4 - Database management
     - Metabase - Dashboarding
+    - Docker - Container for Metabase
 
 
 ### Dashboard functionality:
