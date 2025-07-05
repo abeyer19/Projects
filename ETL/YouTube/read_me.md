@@ -1,9 +1,9 @@
 # Introduction
 This project is meant to teach myself the ETL/ELT process through building out API connections, database creation and management, and dashboarding capabalities to provide realtime data insights.
 I am using the YouTube API web scrapers through [Google](https://developers.google.com/youtube/v3) to gather information about one of my favorite learning and entertainment tools.
-I hope to finally learn and show people that I am capable of creating a database, extract data using webscrapers/APIs, transform and load data into a database, maintain and optimize the database, create realtime dashboards, and provide meaningful insights gracefully.
+I hope to finally learn how to and show people that I am capable of creating a database, extract data using APIs, transform and load data into said database, maintain and optimize the database, create realtime dashboards, and provide meaningful insights gracefully.
 
-This project is meant to be very simply in practice, having almost no experience with data engineering, this should be replicable and easy for anyone who is trying to break into data engineering.
+This project is meant to be very simple in practice, having almost no experience with data engineering, this should be replicable and easy for anyone who is trying to break into data engineering.
 
 ## Overview
 ### Documentation:
