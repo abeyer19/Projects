@@ -26,7 +26,7 @@ FROM videos_channels
     engagements.like_count,
     engagements.comment_count,
     engagements.engagement_rate,
-	engagements.avg_engagement_rate,
+    engagements.avg_engagement_rate,
     engagements.video_channel_id AS channel_id,
     engagements.channel_name,
     engagements.category_id,
