@@ -23,6 +23,28 @@ Metabase Documentation - https://www.metabase.com/docs/latest/
     - replace -> host, port, user, dbname1 (2,3,4) with your database information
 
 
+## Phase One
+Phase one of the project is meant to be an introduction to data engineering for those who are looking to break into the space and to have the groundwork laid out for future iterations of improvement.
+
+### Tools used:
+1. Languages
+    - Python
+    - PostgreSQL
+2. Packages
+    - pandas
+    - psycopg3
+    - dotenv
+    - sys
+    - os
+    - googleapiclient.discovery
+    - random
+    - string
+3. Software
+    - VSCode - IDE
+    - PGAdmin4 - Database management
+    - Metabase - Dashboarding
+    - Docker - Container for Metabase
+
 ### Folder structure of the project:
 1. Scrapers
     - Scrapers are the main tools used for searching, collecting, and interacting with data from the YouTube_v3 API.
@@ -52,31 +74,3 @@ Metabase Documentation - https://www.metabase.com/docs/latest/
         - config.env -> used to store all the sensative information regarding the project such as; API key, database username and password, etc.
         - patch_notes.txt -> used to document everything I did over the project incase I forget, also could be funny if I ever program after a drink or two.
         - read_me.md -> the file you are currently looking at (insert circular reference error joke here), basic read me file for project structure.
-
-
-## Phase One
-Phase one of the project is meant to be an introduction to data engineering for those who are looking to break into the space and to have the groundwork laid out for future iterations of improvement.
-
-
-### Tools used:
-1. Languages
-    - Python
-    - PostgreSQL
-2. Packages
-    - pandas
-    - psycopg3
-    - dotenv
-    - sys
-    - os
-    - googleapiclient.discovery
-    - random
-    - string
-3. Software
-    - VSCode - IDE
-    - PGAdmin4 - Database management
-    - Metabase - Dashboarding
-    - Docker - Container for Metabase
-
-
-### Dashboard functionality:
-1. 
