@@ -1,12 +1,4 @@
- WITH c AS (
-         SELECT c.channel_id,
-            c.channel_name,
-            c.channel_view_count,
-            c.subscriber_count,
-            c.video_count,
-            c.record_date
-           FROM channels c
-        ), vps AS (
+ WITH vps AS (
          SELECT c.channel_id,
             c.channel_name,
             c.channel_view_count,
@@ -15,7 +7,7 @@
             c.record_date,
             c.channel_view_count / c.subscriber_count AS views_per_sub,
             avg(c.channel_view_count / c.subscriber_count) OVER () AS avg_views_per_sub
-           FROM c
+           FROM channels c
         )
  SELECT DISTINCT ON (vps.channel_id) vps.channel_id,
     vps.channel_name,
