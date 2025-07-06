@@ -83,12 +83,14 @@ Phase one of the project is meant to be an introduction to data engineering for 
 
 2. ERD - DBS1
 ![DBS1 - ERD Diagram_nodetails](https://github.com/user-attachments/assets/09c4a4fd-3f17-411b-a7bb-03825180aa9a)
-   
+
 ### Dashboard:
 1. Videos
+ 
 ![videos_dashb](https://github.com/user-attachments/assets/a7bbcbd4-5c2c-4258-8d5c-7f28c8fec338)
 
 
-2. Channels
+3. Channels
+ 
 ![channels_dashb](https://github.com/user-attachments/assets/cac288b3-cdaa-4516-9917-9f28607d6dbc)
    
