@@ -68,6 +68,8 @@ Phase one of the project is meant to be an introduction to data engineering for 
         - channel_score.sql -> used to find the average view per video rate for each video collected from a channel, compared to the average view per video for the entire channel to see trend over time and if any videos stand out compared to the average of the channel.
         - top_videos_current -> used to show which videos have the highest interaction scores based on the most recent record date.
         - videos_engagement_rate.sql -> used to show the engagement rate by video for the most recent record date, allowing for common comparisons across different video interaction sizes.
+        - channels_efficiency_score.sql -> this view shows the efficiency score for each channel showing which channels are efficient at maintaining views and subscribers in terms of their upload frequency, with lower scores showing little to no turn-over rate for both viewership and subscribers per video.
+        - channels_view_per_sub.sql -> this view shows each channels view per subscriber, seeing how many of these channels can convert their viewership to subscribers based on the amount of views they receive.
 5. Additional files
     - The additional files in the folder structure are used for documentation purposes or system files used for the project setup when replicating.
         - .gitignore -> used to tell GitHub which files to ignore when committing to the repo.
