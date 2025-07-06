@@ -34,6 +34,3 @@ def pully(host:str, port:int, user:str, dbname:str, table:str, limit:int=None):
             cur.close()
 
             return df
-
-# Testing only -- delete after finalization
-print(pully(host=host, port=port, user=user, dbname=dbname1, table='videos'))
