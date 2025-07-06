@@ -13,17 +13,24 @@
            FROM videos
              LEFT JOIN channels ON videos.channel_id = channels.channel_id
              LEFT JOIN categories ON videos.category_id = categories.category_id
-        )
- SELECT DISTINCT ON (videos_channels.video_id) videos_channels.video_id,
-    videos_channels.video_title,
-    videos_channels.view_count,
-    videos_channels.like_count,
-    videos_channels.comment_count,
-    (videos_channels.like_count + videos_channels.comment_count) / videos_channels.view_count * 100::numeric AS engagement_rate,
-    videos_channels.video_channel_id AS channel_id,
-    videos_channels.channel_name,
-    videos_channels.category_id,
-    videos_channels.category_title,
-    videos_channels.record_date
-   FROM videos_channels
-  ORDER BY videos_channels.video_id, videos_channels.record_date DESC;
+        ),
+engagements AS (
+SELECT *,
+(videos_channels.like_count + videos_channels.comment_count) / videos_channels.view_count * 100::numeric AS engagement_rate,
+AVG((videos_channels.like_count + videos_channels.comment_count) / videos_channels.view_count * 100::numeric) OVER() AS avg_engagement_rate
+FROM videos_channels
+)
+ SELECT DISTINCT ON (engagements.video_id) engagements.video_id,
+    engagements.video_title,
+    engagements.view_count,
+    engagements.like_count,
+    engagements.comment_count,
+    engagements.engagement_rate,
+	engagements.avg_engagement_rate,
+    engagements.video_channel_id AS channel_id,
+    engagements.channel_name,
+    engagements.category_id,
+    engagements.category_title,
+    engagements.record_date
+   FROM engagements
+  ORDER BY engagements.video_id, engagements.record_date DESC;
