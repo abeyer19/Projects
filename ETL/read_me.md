@@ -77,7 +77,7 @@ Phase one of the project is meant to be an introduction to data engineering for 
         - patch_notes.txt -> used to document everything I did over the project incase I forget, also could be funny if I ever program after a drink or two.
         - read_me.md -> the file you are currently looking at (insert circular reference error joke here), basic read me file for project structure.
 
-### DAGs & ERDs
+### DAGs & ERDs:
 1. DAG - YouTube ETL
 <img width="769" alt="YouTube ETL - DAG" src="https://github.com/user-attachments/assets/73b9fa6f-5262-4e9f-9969-da4680b687e2" />
 
