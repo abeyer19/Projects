@@ -79,10 +79,13 @@ Phase one of the project is meant to be an introduction to data engineering for 
 
 ### DAGs & ERDs:
 1. DAG - YouTube ETL
+ 
 <img width="769" alt="YouTube ETL - DAG" src="https://github.com/user-attachments/assets/73b9fa6f-5262-4e9f-9969-da4680b687e2" />
 
 2. ERD - DBS1
-![DBS1 - ERD Diagram_nodetails](https://github.com/user-attachments/assets/09c4a4fd-3f17-411b-a7bb-03825180aa9a)
+ 
+<img width="824" alt="Screenshot 2025-07-06 at 15 21 23" src="https://github.com/user-attachments/assets/d735ac75-1f8e-4a6a-a43d-f2a866ef696a" />
+
 
 ### Dashboard:
 1. Videos
@@ -90,7 +93,7 @@ Phase one of the project is meant to be an introduction to data engineering for 
 ![videos_dashb](https://github.com/user-attachments/assets/a7bbcbd4-5c2c-4258-8d5c-7f28c8fec338)
 
 
-3. Channels
+2. Channels
  
 ![channels_dashb](https://github.com/user-attachments/assets/cac288b3-cdaa-4516-9917-9f28607d6dbc)
    
