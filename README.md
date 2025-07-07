@@ -6,4 +6,4 @@ Repo for personal projects I felt like doing.
 
 2. ELT/YouTube
 - Use API tools to extract data from Google's YouTube v3 API, develop and maintain a PGAdmin4 PostgreSQL database, develop ETL/ELT pipelines to push data from API into the database, and link the database to a query/dashboarding tool for visualizations.  \
-*See documentation in 'ETL/YouTube' folder for more in depth ideas around custom functions and API connections, analysis, patch notes for project timeline, and read_me.md for replicability.*
+*See documentation in '[ETL/YouTube]'(https://github.com/abeyer19/Projects/tree/474b0ccaccfe14f3d36f00f5a22ff16001dfff01/ETL) folder for more in depth ideas around custom functions and API connections, analysis, patch notes for project timeline, and read_me.md for replicability.*
