@@ -7,9 +7,10 @@ This project is meant to be very simple in practice, having almost no experience
 
 ## Overview
 ### Documentation:
-API Documentation - https://developers.google.com/youtube/v3/docs \
-psycopg3 Documentation - https://www.psycopg.org/psycopg3/docs/index.html \
-Metabase Documentation - https://www.metabase.com/docs/latest/
+[API Documentation](https://developers.google.com/youtube/v3/docs) \
+[psycopg3 Documentation](https://www.psycopg.org/psycopg3/docs/index.html) \
+[Metabase Documentation](https://www.metabase.com/docs/latest/) \
+[Docker Documentation](https://docs.docker.com)
 
 
 ### Set up for Cloning Repository and using Google API key:
