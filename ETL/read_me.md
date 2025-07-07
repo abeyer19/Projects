@@ -1,7 +1,7 @@
 # Introduction
 This project is meant to teach myself the ETL/ELT process through building out API connections, database creation and management, and dashboarding capabalities to provide realtime data insights.
 I am using the YouTube API web scrapers through [Google](https://developers.google.com/youtube/v3) to gather information about one of my favorite learning and entertainment tools.
-I hope to finally learn how to and show people that I am capable of creating a database, extract data using APIs, transform and load data into said database, maintain and optimize the database, create realtime dashboards, and provide meaningful insights gracefully.
+I hope to finally learn the basics of data engineering while also showing people that I am capable of creating a database, extract data using APIs, transform and load data into said database, maintain and optimize the database, create realtime dashboards, and provide meaningful insights gracefully.
 
 This project is meant to be very simple in practice, having almost no experience with data engineering, this should be replicable and easy for anyone who is trying to break into data engineering.
 
@@ -74,7 +74,7 @@ Phase one of the project is meant to be an introduction to data engineering for 
     - The additional files in the folder structure are used for documentation purposes or system files used for the project setup when replicating.
         - .gitignore -> used to tell GitHub which files to ignore when committing to the repo.
         - config.env -> used to store all the sensative information regarding the project such as; API key, database username and password, etc.
-        - patch_notes.txt -> used to document everything I did over the project incase I forget, also could be funny if I ever program after a drink or two.
+        - patch_notes.txt -> used to document everything I did over the project incase I forget.
         - read_me.md -> the file you are currently looking at (insert circular reference error joke here), basic read me file for project structure.
 
 ### DAGs & ERDs:
