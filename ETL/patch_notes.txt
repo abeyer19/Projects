@@ -143,3 +143,15 @@ version 1.0.0 - Beta
     --= 7/2/2025 =--
         Writer and subsequent collectors are now finally working and gathering data fully now.
         Finalized the Videos Dashboard, need to work on the Channels Dashboard now.
+
+version 1.1.0 - Beta
+    --= 7/12/2025 - 12:40 =--
+        Working on getting the writer files to be way more dynamic and useable elsewhere in other similar projects.
+        Then will start working on setting up the Star Schema tables in the DBP1 database, this is already begun and development is halted to fix writers first so I don't have to go back and change everything afterwards.
+
+        Items added:
+        - writer_2.py
+
+        Side note:
+        Going to use this phase to start testing on the tokenization and similarity in text project.
+        Things I need to learn and look more into are; tokenization, text imbedding, multidimensional vectorization of the embeddings, algorimths implementation for ML or just creating my own somehow
