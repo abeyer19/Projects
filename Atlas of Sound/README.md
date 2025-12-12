@@ -4,3 +4,8 @@ This project is meant to continue my personal development and learning of data e
 ## Overview
 ### Documentation:
 
+### Tools Used:
+#### Packages:
+- Requests
+- Beautiful Soup
+- Psycopg3
