@@ -8,10 +8,23 @@
 
 import requests
 
-url = "https://jsonplaceholder.typicode.com/posts/1"
-response = requests.get(url)
+urls = [
+    "https://www.whosampled.com/artist/Daft-Punk/",
+    "https://www.whosampled.com/artist/Nirvana/"
+]
 
-print(response.status_code)  # HTTP status code (200 = OK)
-print(response.text)
-data = response.json()
-print(data["title"])
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                  "AppleWebKit/537.36 (KHTML, like Gecko) "
+                  "Chrome/120.0.0.0 Safari/537.36"
+}
+
+for url in urls:
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        filename = url.split("/")[-2] + ".html"
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(response.text)
+        print(f"Saved {url} as {filename}")
+    else:
+        print(f"Failed to fetch {url} - Status code: {response.status_code}")
