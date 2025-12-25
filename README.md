@@ -1,5 +1,5 @@
 # Projects
-Repo for personal projects I felt like doing.
+Repo for personal projects I felt like doing that are not production ready, or on their own as a stand alone project.
 
 1. SQL - Auto Create Table for CSV's
 - Python script for easily converting CSV files into PostgreSQL code that will create a table in pgAdmin4.
